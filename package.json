@@ -1,0 +1,36 @@
+{
+  "name": "daftacademy-frontend_levelup",
+  "version": "1.0.0",
+  "description": "Daftacademy FrontEnd LevelUp 2019",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sowka1995/daftacademy-frontend_levelup.git"
+  },
+  "keywords": [
+    "daftacademy",
+    "daftcode",
+    "frontend",
+    "levelup"
+  ],
+  "author": "Bartosz Sowa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sowka1995/daftacademy-frontend_levelup/issues"
+  },
+  "homepage": "https://github.com/sowka1995/daftacademy-frontend_levelup#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "babel-loader": "^8.0.5",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "browserslist": "> 0.25%, not dead",
+  "dependencies": {}
+}
