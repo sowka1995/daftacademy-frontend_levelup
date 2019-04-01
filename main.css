@@ -1,5 +1,183 @@
-.body {
-  background-color: #ffffff; }
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
+@import url(https://fonts.googleapis.com/css?family=Sanchez);
+* {
+  box-sizing: border-box; }
+
+body, html {
+  background-color: #FFF;
+  margin: 2% 2% 0% 2%;
+  padding: 0;
+  font-family: "Roboto", sans-serif; }
+
+.mint-box {
+  background-color: #EEF8F6;
+  padding-bottom: 10px;
+  max-width: 1200px;
+  min-height: 80vh;
+  margin: 0 auto; }
+
+.page-header {
+  margin: 7% 4% 6% 13%;
+  position: relative;
+  top: 50px;
+  padding-top: 25px; }
+
+.page-logo {
+  font-family: "Sanchez", serif;
+  position: absolute;
+  top: -94px;
+  left: -105px;
+  border: 2px solid #000;
+  width: 132px;
+  text-align: center; }
+
+.page-content {
+  margin: 7% 4% 6% 13%;
+  padding: 10px 0px; }
+
+.page-menu__items {
+  list-style-type: none;
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-justify-content: space-between;
+          justify-content: space-between; }
+
+.page-menu__item {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #CBDBD8; }
+  .page-menu__item-active {
+    color: #415066; }
+    .page-menu__item-active::after {
+      content: "";
+      display: block;
+      margin-left: 3px;
+      width: calc(100% - 13px);
+      border-bottom: 1px solid #000; }
+  .page-menu__item:hover::after {
+    content: "";
+    display: block;
+    margin-left: 3px;
+    width: calc(100% - 13px);
+    border-bottom: 1px solid #000; }
+
+.page-menu__link {
+  display: inline-block;
+  padding: 3px;
+  text-decoration: none;
+  color: inherit; }
+  .page-menu__link:hover {
+    color: #415066; }
+
+.drinks-list {
+  width: 100%;
+  list-style-type: none;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-align-items: center;
+          align-items: center;
+  overflow-y: auto;
+  max-height: 700px; }
+  .drinks-list__item {
+    width: 33.33%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+            justify-content: center;
+    -webkit-align-items: center;
+            align-items: center;
+    position: relative;
+    padding-bottom: 4%;
+    padding-right: 4%; }
+  .drinks-list__image {
+    width: 100%; }
+    .drinks-list__image:hover {
+      border: 5px solid #FFE1B5; }
+  .drinks-list__desc {
+    position: absolute;
+    color: #FFF;
+    font-size: 29px;
+    font-weight: 600;
+    white-space: normal;
+    line-height: 58px;
+    text-align: center;
+    letter-spacing: 2px;
+    width: 70%;
+    padding: 0;
+    margin: 0; }
+
+.page-footer {
+  margin: 3%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center; }
+  .page-footer__contact {
+    margin-right: auto;
+    margin-left: 15px;
+    color: #939AA7; }
+  .page-footer__email {
+    color: #39475F;
+    text-decoration: none;
+    font-weight: 600; }
+  .page-footer .social-media-links {
+    list-style-type: none;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-justify-content: flex-end;
+            justify-content: flex-end;
+    margin-right: 15x;
+    margin-left: 15px; }
+    .page-footer .social-media-links__item {
+      padding: 10px; }
+    .page-footer .social-media-links__link {
+      text-decoration: none;
+      color: #939AA7; }
+
+@media only screen and (max-width: 1024px) {
+  .page-header {
+    margin: 30px auto; }
+  .page-logo {
+    top: -94px;
+    left: 30px; }
+  .page-content {
+    margin: 30px auto;
+    padding-top: 40px; }
+  .page-menu__items {
+    padding: 0 4%;
+    -webkit-flex-flow: row wrap;
+            flex-flow: row wrap; }
+  .page-menu__item {
+    padding-bottom: 3px; }
+  .drinks-list {
+    padding: 0 4%; } }
+
+@media only screen and (max-width: 768px) {
+  .drinks-list__items {
+    -webkit-flex-flow: wrap;
+            flex-flow: wrap; }
+  .drinks-list__item {
+    width: 100%; }
+  .drinks-list__desc {
+    font-size: 26px; } }
+
+@media only screen and (max-width: 550px) {
+  .page-footer {
+    -webkit-flex-direction: column;
+            flex-direction: column;
+    -webkit-justify-content: center;
+            justify-content: center; }
+    .page-footer__contact {
+      margin: 2%; }
+    .page-footer .social-media-links {
+      padding: 0; } }
 
 
 /*# sourceMappingURL=main.css.map*/
