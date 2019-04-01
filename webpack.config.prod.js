@@ -2,8 +2,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-const isProduction = true; //process.env.NODE_ENV === 'production';
-
 module.exports = {
   entry: "./src/app.js",
   output: {
@@ -13,7 +11,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: "./src/index.html"
+      template: "./src/assets/index.html"
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
@@ -27,7 +25,7 @@ module.exports = {
     ])
   ],
   watch: true,
-  mode: "development",
+  mode: "production",
   devtool: "source-map",
   module: {
     rules: [
@@ -52,10 +50,6 @@ module.exports = {
           { loader: "postcss-loader", options: { sourceMap: isProduction } },
           { loader: "sass-loader", options: { sourceMap: isProduction } }
         ]
-      },
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"]
       }
     ]
   }

@@ -1,3 +1,250 @@
-.body {
-    background-color: #ffffff;
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+@import url('https://fonts.googleapis.com/css?family=Sanchez');
+
+// TODO
+// Rozbić na komponenty, zmienne, layout, itp
+
+$font-content-stack: 'Roboto', sans-serif;
+$font-logo-stack: 'Sanchez', serif;
+
+$mint: #EEF8F6;
+$white: #FFF;
+$gray: #939AA7;
+$menu-item-color: #CBDBD8;
+$email-color: #39475F;
+$black: #000;
+$color-menu-hover: #415066;
+$color-drink-hover: #FFE1B5;
+
+* {
+  box-sizing: border-box;
 }
+
+body, html {
+  background-color: $white;
+  margin: 2% 2% 0% 2%;
+  padding: 0;
+  font-family: $font-content-stack;
+}
+
+.mint-box {
+  background-color: $mint;
+  padding-bottom: 10px;
+  max-width: 1200px;
+  min-height: 80vh;
+  margin: 0 auto;
+} 
+
+.page-header {
+  margin: 7% 4% 6% 13%;
+  position: relative;
+  top: 50px;
+  padding-top: 25px;
+}
+.page-logo {
+  font-family: $font-logo-stack;
+  position: absolute;
+  top: -94px;
+  left: -105px;
+  border: 2px solid $black;
+  width: 132px;
+  text-align: center;
+}
+.page-content {
+  margin: 7% 4% 6% 13%;
+  padding: 10px 0px;
+}
+
+.page-menu {
+
+  &__items {
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  &__item {
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: $menu-item-color;
+
+    &-active { 
+      color: $color-menu-hover;
+ 
+      &::after {
+        content: "";
+        display: block;
+        margin-left: 3px;
+        width: calc(100% - 13px);
+        border-bottom: 1px solid $black;
+      }
+    }
+
+    &:hover {
+      &::after {
+        content: "";
+        display: block;
+        margin-left: 3px;
+        width: calc(100% - 13px);
+        border-bottom: 1px solid $black;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 3px;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      color: $color-menu-hover;
+    }
+  }
+}
+
+.drinks-list {
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  overflow-y: auto;
+  max-height: 700px;
+
+  &__item {
+    width: 33.33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-bottom: 4%;
+    padding-right: 4%;
+  }
+
+  &__image {
+    width: 100%;
+
+    &:hover {
+      border: 5px solid $color-drink-hover;
+    }
+  }
+
+  &__desc {
+    position: absolute;
+    color: $white;
+    font-size: 29px;
+    font-weight: 600;
+    white-space: normal;
+    line-height: 58px;
+    text-align: center;
+    letter-spacing: 2px;
+    width: 70%;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.page-footer {
+  margin: 3%;
+  display: flex;
+  align-items: center;
+
+  &__contact {
+    margin-right: auto;
+    margin-left: 15px;
+    color: $gray;
+  }
+
+  &__email {
+    color: $email-color;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .social-media-links {
+    list-style-type: none;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    margin-right: 15x;
+    margin-left: 15px;
+    
+    &__item {
+      padding: 10px;
+    }
+
+    &__link {
+      text-decoration: none;
+      color: $gray;
+    }
+  }
+}
+
+
+@media only screen and (max-width : 1024px) {
+  .page-header {
+    margin: 30px auto;
+  }
+  .page-logo {
+    top: -94px;
+    left: 30px;
+  }
+  .page-content {
+    margin: 30px auto;
+    padding-top: 40px;
+  }
+
+  .page-menu {
+    &__items {
+      padding: 0 4%;
+      flex-flow: row wrap;
+    }
+
+    &__item {
+      padding-bottom: 3px;
+    }
+  }
+
+  .drinks-list {
+    padding: 0 4%;
+  }
+
+}
+
+@media only screen and (max-width : 768px) {
+  .drinks-list {   
+    &__items {
+      flex-flow: wrap;
+    }
+
+    &__item {
+      width: 100%;
+    }
+
+    &__desc {
+      font-size: 26px;
+    }
+  }
+
+}
+
+
+@media only screen and (max-width : 550px) {
+ .page-footer {
+  flex-direction: column;
+  justify-content: center;
+
+  &__contact {
+    margin: 2%;
+  }
+
+  .social-media-links {
+    padding: 0;
+  }
+ }
+
+}
+
