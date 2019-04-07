@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #0F2B26; }
+
+.page-content {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center; }
+
+.clock {
+  width: 100%;
+  text-align: center;
+  color: white;
+  display: none;
+  -webkit-animation: clock-in 700ms ease both;
+          animation: clock-in 700ms ease both; }
+  .clock__items {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-justify-content: center;
+            justify-content: center; }
+  .clock__colon {
+    height: 100%;
+    padding: 10px;
+    font-size: 100px; }
+  .clock__item {
+    height: 100%;
+    padding: 20px;
+    font-size: 100px; }
+
+@-webkit-keyframes clock-in {
+  0% {
+    -webkit-transform: scale(0) rotate(12deg);
+            transform: scale(0) rotate(12deg);
+    opacity: 0;
+    visibility: hidden; }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+            transform: scale(1) rotate(0);
+    opacity: 1;
+    visibility: visible; } }
+
+@keyframes clock-in {
+  0% {
+    -webkit-transform: scale(0) rotate(12deg);
+            transform: scale(0) rotate(12deg);
+    opacity: 0;
+    visibility: hidden; }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+            transform: scale(1) rotate(0);
+    opacity: 1;
+    visibility: visible; } }
+
+@-webkit-keyframes out {
+  0% {
+    ransform: scale(1) rotate(0);
+    opacity: 1;
+    visibility: visible; }
+  100% {
+    -webkit-transform: scale(0) rotate(-12deg);
+            transform: scale(0) rotate(-12deg);
+    opacity: 0;
+    visibility: hidden; } }
+
+@keyframes out {
+  0% {
+    ransform: scale(1) rotate(0);
+    opacity: 1;
+    visibility: visible; }
+  100% {
+    -webkit-transform: scale(0) rotate(-12deg);
+            transform: scale(0) rotate(-12deg);
+    opacity: 0;
+    visibility: hidden; } }
+
+
+/*# sourceMappingURL=clock.css.map*/
