@@ -11,7 +11,6 @@ module.exports = {
     clock: "./src/clock/clockApp.js"
   },
   output: {
-    publicPath: '/dist',
     path: `${__dirname}/dist/`,
     filename: "[name]/[name].bundle.js"
   },
