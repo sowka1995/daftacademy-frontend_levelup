@@ -8,7 +8,8 @@ const isProduction = true; //process.env.NODE_ENV === 'production';
 module.exports = {
   entry: {
     dinks: "./src/dinks/dinksApp.js", 
-    clock: "./src/clock/clockApp.js"
+    clock: "./src/clock/clockApp.js",
+    fibonacci: "./src/fibonacci/fibonacciApp.js"
   },
   output: {
     path: `${__dirname}/dist/`,
@@ -19,13 +20,19 @@ module.exports = {
       title: "DINKS WEB PAGE",
       filename: "dinks/index.html",
       template: "./src/dinks/index.html",
-      excludeAssets: [/clock*/]
+      excludeAssets: [/(clock*|fibonacci*)/]
     }),
     new HtmlWebpackPlugin({
       title: "CLOCK WEB PAGE",
       filename: "clock/index.html",
       template: "./src/clock/index.html",
-      excludeAssets: [/dinks*/]
+      excludeAssets: [/(dinks*|fibonacci*)/]
+    }),
+    new HtmlWebpackPlugin({
+      title: "Fibonacci - homework 5",
+      filename: "fibonacci/index.html",
+      template: "./src/fibonacci/index.html",
+      excludeAssets: [/(clock*|dinks*)/]
     }),
     new MiniCssExtractPlugin({
       filename: "[name]/[name].css",
